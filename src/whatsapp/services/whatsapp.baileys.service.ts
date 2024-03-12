@@ -873,7 +873,7 @@ export class BaileysStartupService extends WAStartupService {
             m.messageTimestamp = m.messageTimestamp?.toNumber();
           }
 
-          if (m.messageTimestamp <= timestampLimitToImport) {
+if (Long.isLong(m.messageTimestamp) && m.messageTimestamp.lessThanOrEqual(timestampLimitToImport)) {
             continue;
           }
 
